@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A4B87F94-C95D-4F4D-8399-420653FF5576}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Bot_Idosos</RootNamespace>
+    <AssemblyName>BOT de administração de medicamentos para idosos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Comprimidos.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClosedXML, Version=0.95.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\ClosedXML.0.95.4\lib\net46\ClosedXML.dll</HintPath>
+    </Reference>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>packages\DocumentFormat.OpenXml.2.7.2\lib\net46\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="ExcelNumberFormat, Version=1.0.10.0, Culture=neutral, PublicKeyToken=23c6f5d73be07eca, processorArchitecture=MSIL">
+      <HintPath>packages\ExcelNumberFormat.1.0.10\lib\net20\ExcelNumberFormat.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CognitiveServices.Speech.csharp, Version=1.17.0.28, Culture=neutral, PublicKeyToken=d2e6dcccb609e663, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.CognitiveServices.Speech.1.17.0\lib\net461\Microsoft.CognitiveServices.Speech.csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.FileSystem.Primitives.4.0.1\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.IO.Packaging, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.IO.Packaging.4.0.0\lib\net46\System.IO.Packaging.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Speech" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Estatisticas.cs" />
+    <Compile Include="Models\Horario.cs" />
+    <Compile Include="Models\Medicamentos.cs" />
+    <Compile Include="Models\Pessoa.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\FormAdicionarLembrete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormAdicionarLembrete.Designer.cs">
+      <DependentUpon>FormAdicionarLembrete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormAdicionarMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormAdicionarMedicamento.Designer.cs">
+      <DependentUpon>FormAdicionarMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormAjudaTextosAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormAjudaTextosAjuda.Designer.cs">
+      <DependentUpon>FormAjudaTextosAjuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormEditarLembrete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormEditarLembrete.Designer.cs">
+      <DependentUpon>FormEditarLembrete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormEditarPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormEditarPerfil.Designer.cs">
+      <DependentUpon>FormEditarPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormEstatisticas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormEstatisticas.Designer.cs">
+      <DependentUpon>FormEstatisticas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormMenuAjuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormMenuAjuda.Designer.cs">
+      <DependentUpon>FormMenuAjuda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormMeuPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormMeuPerfil.Designer.cs">
+      <DependentUpon>FormMeuPerfil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormPesquisarMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormPesquisarMedicamento.Designer.cs">
+      <DependentUpon>FormPesquisarMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormRegistar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormRegistar.Designer.cs">
+      <DependentUpon>FormRegistar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormRemoverMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormRemoverMedicamento.Designer.cs">
+      <DependentUpon>FormRemoverMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormTrocarSomAlarme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormTrocarSomAlarme.Designer.cs">
+      <DependentUpon>FormTrocarSomAlarme.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FormViewPrincipalApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\FormViewPrincipalApp.Designer.cs">
+      <DependentUpon>FormViewPrincipalApp.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\FormAdicionarLembrete.resx">
+      <DependentUpon>FormAdicionarLembrete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormAdicionarMedicamento.resx">
+      <DependentUpon>FormAdicionarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormAjudaTextosAjuda.resx">
+      <DependentUpon>FormAjudaTextosAjuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormEditarLembrete.resx">
+      <DependentUpon>FormEditarLembrete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormEditarPerfil.resx">
+      <DependentUpon>FormEditarPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormEstatisticas.resx">
+      <DependentUpon>FormEstatisticas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormMenuAjuda.resx">
+      <DependentUpon>FormMenuAjuda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormMeuPerfil.resx">
+      <DependentUpon>FormMeuPerfil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormPesquisarMedicamento.resx">
+      <DependentUpon>FormPesquisarMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormRegistar.resx">
+      <DependentUpon>FormRegistar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormRemoverMedicamento.resx">
+      <DependentUpon>FormRemoverMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormTrocarSomAlarme.resx">
+      <DependentUpon>FormTrocarSomAlarme.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\FormViewPrincipalApp.resx">
+      <DependentUpon>FormViewPrincipalApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Alarme_Bot_Idosos.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Amarelo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vermelho.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Verde.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Azul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purple.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlarmeEminem.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImagemDeSom.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlarmeGalo.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlarmeStillDre.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AlarmeTornado.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Comprimidos.ico" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\Pause.png" />
+    <None Include="Resources\MicroImg.png" />
+    <None Include="Resources\loading.gif" />
+    <None Include="Resources\anonimo.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="packages\Microsoft.CognitiveServices.Speech.1.17.0\build\net461\Microsoft.CognitiveServices.Speech.targets" Condition="Exists('packages\Microsoft.CognitiveServices.Speech.1.17.0\build\net461\Microsoft.CognitiveServices.Speech.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CognitiveServices.Speech.1.17.0\build\net461\Microsoft.CognitiveServices.Speech.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CognitiveServices.Speech.1.17.0\build\net461\Microsoft.CognitiveServices.Speech.targets'))" />
+  </Target>
+</Project>
